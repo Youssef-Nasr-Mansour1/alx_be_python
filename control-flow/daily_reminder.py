@@ -9,7 +9,7 @@ match priority:
     case "low":
         reminder = (f"Your task {task} is low periority")
 if time_bound == "yes":
-    print (f"rminder: {reminder}")
+    print (f"reminder: {reminder}")
     print("This is a time-sensitive task that requires immediate attention today!")
 else:
     print(reminder)
