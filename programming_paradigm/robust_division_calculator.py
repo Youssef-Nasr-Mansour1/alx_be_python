@@ -23,7 +23,7 @@ def safe_divide(numerator, denominator):
         return "Error: Cannot divide by zero."
     
     except ValueError:
-        return "Error: Both numerator and denominator must be numbers."
+        return "Error: Please enter numeric values only."
     
     else:
         return f"The result of {num} / {denom} is: {result}"
