@@ -20,13 +20,14 @@ def safe_divide(numerator, denominator):
         result = num / denom
         
     except ZeroDivisionError:
-        return "Error: Cannot divide by zero."
+        return "Error: Division by zero is not allowed."
     
     except ValueError:
-        return "Error: Please enter numeric values only."
+        return "Error: Both numerator and denominator must be numbers."
     
     else:
-        return f"The result of {num} / {denom} is: {result}"
+        # Return simplified result message
+        return f"The result of the division is {result}"
 
 # main.py
 
