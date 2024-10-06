@@ -9,23 +9,10 @@ class BankAccount:
         print(f"Deposit method called with amount: {amount}")  # Debug statement
         if amount > 0:
             self._account_balance += amount
-            print(f"Deposited: ${amount:.1f}")
+            # Ensuring the message is printed only once
+            print(f"Deposited: ${amount:.2f}")
         else:
             print("Deposit amount must be positive.")
-
-    def withdraw(self, amount):
-        """Deduct the amount from the account balance if sufficient funds exist."""
-        if 0 < amount <= self._account_balance:
-            self._account_balance -= amount
-            print(f"Withdrew: ${amount:.1f}")
-            return True
-        else:
-            print("Insufficient funds or invalid amount.")
-            return False
-
-    def display_balance(self):
-        """Print the current account balance in a user-friendly format."""
-        print(f"Current balance: ${self._account_balance:.1f}")
 # main-0.py
 
 import sys
@@ -41,7 +28,7 @@ def main():
         print("\nOptions:")
         print("1. Deposit")
         print("2. Withdraw")
-        print("3. Current Balance:")
+        print("3. Display Balance")
         print("4. Exit")
 
         choice = input("Choose an option (1-4): ")
@@ -50,7 +37,7 @@ def main():
             amount = input("Enter amount to deposit: ")
             try:
                 amount = float(amount)
-                print(f"User chose to deposit: ${amount:.1f}")  # Debug statement
+                print(f"User chose to deposit: ${amount:.2f}")  # Debug statement
                 if amount > 0:  # Validate positive amount
                     account.deposit(amount)
                 else:
