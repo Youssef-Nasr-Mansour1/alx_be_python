@@ -41,17 +41,25 @@ def main():
         print("\nOptions:")
         print("1. Deposit")
         print("2. Withdraw")
-        print("3. Current Balance:")
+        print("3. Current Balance")
         print("4. Exit")
 
         choice = input("Choose an option (1-4): ")
 
         if choice == '1':
-            amount = float(input("Enter amount to deposit: "))
-            account.deposit(amount)
+            amount = input("Enter amount to deposit: ")
+            try:
+                amount = float(amount)
+                account.deposit(amount)
+            except ValueError:
+                print("Please enter a valid number for the deposit amount.")
         elif choice == '2':
-            amount = float(input("Enter amount to withdraw: "))
-            account.withdraw(amount)
+            amount = input("Enter amount to withdraw: ")
+            try:
+                amount = float(amount)
+                account.withdraw(amount)
+            except ValueError:
+                print("Please enter a valid number for the withdrawal amount.")
         elif choice == '3':
             account.display_balance()
         elif choice == '4':
