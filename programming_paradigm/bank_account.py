@@ -26,3 +26,39 @@ class BankAccount:
         """Print the current account balance in a user-friendly format."""
         print(f"Current balance: ${self._account_balance:.2f}")
 
+# main-0.py
+
+import sys
+from bank_account import BankAccount
+
+def main():
+    # Create a bank account with an initial balance (if provided)
+    initial_balance = float(sys.argv[1]) if len(sys.argv) > 1 else 0
+    account = BankAccount(initial_balance)
+
+    while True:
+        # Command-line interface for user input
+        print("\nOptions:")
+        print("1. Deposit")
+        print("2. Withdraw")
+        print("3. Display Balance")
+        print("4. Exit")
+
+        choice = input("Choose an option (1-4): ")
+
+        if choice == '1':
+            amount = float(input("Enter amount to deposit: "))
+            account.deposit(amount)
+        elif choice == '2':
+            amount = float(input("Enter amount to withdraw: "))
+            account.withdraw(amount)
+        elif choice == '3':
+            account.display_balance()
+        elif choice == '4':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid option. Please choose again.")
+
+if __name__ == "__main__":
+    main()
