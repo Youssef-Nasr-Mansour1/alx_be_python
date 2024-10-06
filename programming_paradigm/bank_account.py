@@ -2,14 +2,13 @@
 
 class BankAccount:
     def __init__(self, initial_balance=0):
-        self._account_balance = initial_balance  # Encapsulated balance attribute
+        self._account_balance = initial_balance
 
     def deposit(self, amount):
         """Add the specified amount to the account balance."""
-        print(f"Deposit method called with amount: {amount}")  # Debug statement
         if amount > 0:
             self._account_balance += amount
-            # Ensure only one print statement
+            # Only one print statement
             print(f"Deposited: ${amount:.2f}")
         else:
             print("Deposit amount must be positive.")
@@ -28,7 +27,7 @@ def main():
         print("\nOptions:")
         print("1. Deposit")
         print("2. Withdraw")
-        print("3. Current Balance:")
+        print("3. Current balance:")
         print("4. Exit")
 
         choice = input("Choose an option (1-4): ")
@@ -37,7 +36,6 @@ def main():
             amount = input("Enter amount to deposit: ")
             try:
                 amount = float(amount)
-                print(f"User chose to deposit: ${amount:.2f}")  # Debug statement
                 if amount > 0:  # Validate positive amount
                     account.deposit(amount)
                 else:
