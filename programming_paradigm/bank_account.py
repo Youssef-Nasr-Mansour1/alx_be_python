@@ -28,6 +28,8 @@ class BankAccount:
 
 # main-0.py
 
+# main-0.py
+
 import sys
 from bank_account import BankAccount
 
@@ -41,7 +43,7 @@ def main():
         print("\nOptions:")
         print("1. Deposit")
         print("2. Withdraw")
-        print("3. Current Balance")
+        print("3. Current Balance:")
         print("4. Exit")
 
         choice = input("Choose an option (1-4): ")
