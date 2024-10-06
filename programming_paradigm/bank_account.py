@@ -28,8 +28,6 @@ class BankAccount:
 
 # main-0.py
 
-# main-0.py
-
 import sys
 from bank_account import BankAccount
 
@@ -52,7 +50,10 @@ def main():
             amount = input("Enter amount to deposit: ")
             try:
                 amount = float(amount)
-                account.deposit(amount)
+                if amount > 0:  # Validate positive amount
+                    account.deposit(amount)
+                else:
+                    print("Amount must be greater than zero.")
             except ValueError:
                 print("Please enter a valid number for the deposit amount.")
         elif choice == '2':
