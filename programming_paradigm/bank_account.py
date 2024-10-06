@@ -1,3 +1,18 @@
+# bank_account.py
+
+class BankAccount:
+    def __init__(self, initial_balance=0):
+        self._account_balance = initial_balance  # Encapsulated balance attribute
+
+    def deposit(self, amount):
+        """Add the specified amount to the account balance."""
+        print(f"Deposit method called with amount: {amount}")  # Debug statement
+        if amount > 0:
+            self._account_balance += amount
+            # Ensure only one print statement
+            print(f"Deposited: ${amount:.2f}")
+        else:
+            print("Deposit amount must be positive.")
 # main-0.py
 
 import sys
